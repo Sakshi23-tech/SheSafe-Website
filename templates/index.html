@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SheSafe | Women's Safety</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        She<span>Safe</span>
+    </div>
+
+    <class="main-nav">
+       <a href="/" class="active">🏠
+     Home</a>
+       <a href="/location-page">📍 
+    Location</a>
+       <a href="/contacts-page">👥
+     Contacts</a>
+       <a href="#safety">🛡️ Safety</a>
+       <a href="#assistant">🤖 Assistant</a>
+
+</header>
+
+<!-- SAFETY STATUS BAR -->
+<div class="safety-status-bar">
+    <div class="status-left">
+        <span class="status-dot"></span>
+        <div>
+            <strong>SheSafe Protection Status</strong>
+            <small id="systemStatus">System Ready</small>
+        </div>
+    </div>
+
+    <div class="status-right">
+        <span>🛡️ Safety Tools Available</span>
+    </div>
+</div>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-text">
+
+        <p class="small-title">
+            YOUR SAFETY MATTERS
+        </p>
+
+        <h1>
+            Safety when<br>
+            you need it most.
+        </h1>
+
+        <p>
+            SheSafe is a women's safety platform designed
+            to provide quick access to emergency support,
+            location services and trusted contacts.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="sos-button"
+                onclick="emergencySOS()">
+
+                🚨 SOS
+
+            </button>
+
+
+            <a href="#location"
+               class="location-button">
+
+                📍 Get My Location
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="shield">
+            🛡️
+        </div>
+
+        <h3>
+            Stay Alert.<br>
+            Stay Connected.
+        </h3>
+
+        <p>
+            Quick safety tools designed
+            for emergency situations.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- QUICK SAFETY ACTIONS -->
+<section class="quick-actions">
+    <div class="quick-actions-title">
+        <p>QUICK RESPONSE</p>
+        <h2>Safety Actions</h2>
+    </div>
+
+    <div class="quick-actions-grid">
+
+        <a href="tel:112" class="quick-action emergency">
+            <span>🚨</span>
+            <div>
+                <strong>Emergency</strong>
+                <small>Call 112</small>
+            </div>
+        </a>
+
+        <a href="#location" class="quick-action">
+            <span>📍</span>
+            <div>
+                <strong>My Location</strong>
+                <small>View location</small>
+            </div>
+        </a>
+
+        <a href="#contacts" class="quick-action">
+            <span>👥</span>
+            <div>
+                <strong>Trusted Contacts</strong>
+                <small>Manage contacts</small>
+            </div>
+        </a>
+
+        <a href="#assistant" class="quick-action">
+            <span>🤖</span>
+            <div>
+                <strong>Safety Assistant</strong>
+                <small>Get guidance</small>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- ================= EMERGENCY SERVICES ================= -->
+
+<section id="safety" class="section">
+
+    <div class="section-title">
+
+        <p>QUICK ACCESS</p>
+
+        <h2>Emergency Services</h2>
+
+        <p>
+            Important emergency numbers at your fingertips.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🚨
+            </div>
+
+            <h3>112</h3>
+
+            <p>
+                National Emergency Number
+            </p>
+
+            <a href="tel:112">
+                Call 112
+            </a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                👩
+            </div>
+
+            <h3>181</h3>
+
+            <p>
+                Women Helpline
+            </p>
+
+            <a href="tel:181">
+                Call 181
+            </a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🏥
+            </div>
+
+            <h3>108</h3>
+
+            <p>
+                Ambulance Emergency Service
+            </p>
+
+            <a href="tel:108">
+                Call 108
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= LIVE LOCATION ================= -->
+
+<section id="location"
+         class="section location-section">
+
+    <div class="section-title">
+
+        <p>REAL-TIME SAFETY</p>
+
+        <h2>📍 Live Location</h2>
+
+        <p>
+            Get your current location and keep it updated
+            while the safety page is open.
+        </p>
+
+    </div>
+
+
+    <div class="live-location-card">
+
+
+        <div class="location-status">
+
+            <div class="location-pulse">
+                📍
+            </div>
+
+            <div>
+
+                <h3 id="locationStatus">
+                    Location not started
+                </h3>
+
+                <p id="locationTime">
+                    Click "Start Location" to begin.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="coordinates-box">
+
+
+            <div>
+
+                <span>LATITUDE</span>
+
+                <strong id="latitude">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>LONGITUDE</span>
+
+                <strong id="longitude">
+                    --
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="location-actions">
+
+
+            <button
+                class="start-location"
+                onclick="startLiveLocation()">
+
+                📍 Start Location
+
+            </button>
+
+
+            <button
+                class="stop-location"
+                onclick="stopLiveLocation()">
+
+                🛑 Stop
+
+            </button>
+
+
+        </div>
+
+
+        <a id="mapLink"
+           href="#"
+           target="_blank"
+           class="map-button">
+
+            🗺️ Open in Google Maps
+
+        </a>
+
+
+    </div>
+
+
+    <div class="location-note">
+
+        🔐 <strong>Privacy:</strong>
+
+        Location is accessed only after you give
+        browser permission and tracking stops when
+        you press the Stop button.
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SAFE PLACES ================= -->
+
+<section class="section safe-places-section">
+
+
+    <div class="section-title">
+
+        <p>NEARBY SUPPORT</p>
+
+        <h2>🛡️ Nearby Safe Places</h2>
+
+        <p>
+            Find nearby police stations and hospitals
+            using your current location.
+        </p>
+
+    </div>
+
+
+    <div class="safe-places-card">
+
+
+        <div class="safe-place-item">
+
+
+            <div class="safe-place-icon">
+                👮
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Police Stations
+                </h3>
+
+                <p>
+                    Find police stations near
+                    your current location.
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="findNearby('police station')"
+                class="safe-place-button">
+
+                Find
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="safe-place-item">
+
+
+            <div class="safe-place-icon">
+                🏥
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Hospitals
+                </h3>
+
+                <p>
+                    Find hospitals near your
+                    current location.
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="findNearby('hospital')"
+                class="safe-place-button">
+
+                Find
+
+            </button>
+
+
+        </div>
+
+
+        <p id="safePlaceStatus"
+           class="safe-place-status">
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACTS ================= -->
+
+<section id="contacts"
+         class="section contacts-section">
+
+
+    <div class="section-title">
+
+        <p>YOUR SUPPORT NETWORK</p>
+
+        <h2>Trusted Contacts</h2>
+
+        <p>
+            Add people you trust for quick access
+            during emergencies.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <div class="contact-form">
+
+            <h3>
+                Add Emergency Contact
+            </h3>
+
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Contact Name">
+
+
+            <input
+                type="tel"
+                id="contactPhone"
+                placeholder="Phone Number">
+
+
+            <button onclick="saveContact()">
+
+                Save Contact
+
+            </button>
+
+
+            <p id="contactMessage"></p>
+
+        </div>
+
+
+
+        <div class="contact-list">
+
+            <h3>
+                Saved Contacts
+            </h3>
+
+            <div id="contactsList">
+
+                <p>
+                    No contacts added yet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SAFETY ASSISTANT ================= -->
+
+<section id="assistant"
+         class="section assistant-section">
+
+
+    <div class="section-title">
+
+        <p>SAFETY GUIDANCE</p>
+
+        <h2>🤖 Safety Assistant</h2>
+
+        <p>
+            Ask for general safety guidance.
+        </p>
+
+    </div>
+
+
+    <div class="assistant-box">
+
+
+        <input
+            type="text"
+            id="question"
+            placeholder="Ask something like: What should I do if I feel unsafe?">
+
+
+        <button onclick="askAI()">
+
+            Ask Assistant
+
+        </button>
+
+
+        <div id="answerBox"
+             class="answer-box">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SAFETY TIPS ================= -->
+
+<section class="section tips-section">
+
+
+    <div class="section-title">
+
+        <p>EVERYDAY SAFETY</p>
+
+        <h2>Safety Tips</h2>
+
+    </div>
+
+
+    <div class="tips-grid">
+
+
+        <div class="tip-card">
+
+            <span>🔋</span>
+
+            <h3>
+                Keep Your Phone Charged
+            </h3>
+
+            <p>
+                Maintain enough battery for
+                emergency communication.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <span>📍</span>
+
+            <h3>
+                Share Your Plans
+            </h3>
+
+            <p>
+                Tell a trusted person about
+                your destination when appropriate.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <span>🌙</span>
+
+            <h3>
+                Prefer Safe Routes
+            </h3>
+
+            <p>
+                Choose well-lit and populated
+                routes whenever possible.
+            </p>
+
+        </div>
+    
+
+
+
+        <div class="tip-card">
+
+            <span>🔐</span>
+
+            <h3>
+                Protect Your Information
+            </h3>
+
+            <p>
+                Avoid sharing passwords and
+                sensitive personal information.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        SheSafe
+    </h3>
+
+    <p>
+        A student prototype focused on women's safety
+        and quick access to safety resources.
+    </p>
+
+    <p>
+        For immediate emergencies, contact
+        appropriate emergency services.
+    </p>
+
+    <p class="copyright">
+        © 2026 SheSafe
+    </p>
+
+</footer>
+
+
+
+<!-- ================= SOS SCREEN ================= -->
+
+<div id="sosScreen"
+     class="sos-screen">
+
+
+    <div class="sos-box">
+
+
+        <div class="sos-icon">
+            🚨
+        </div>
+
+
+        <h1>
+            Emergency Mode
+        </h1>
+
+
+        <p>
+            Stay calm. Use the options below to contact
+            emergency support or access your current location.
+        </p>
+
+
+        <div class="sos-location">
+
+            <span>
+                📍 Current Location
+            </span>
+
+            <strong id="sosLocation">
+                Location not available
+            </strong>
+
+        </div>
+
+
+        <div class="sos-buttons">
+
+
+            <a href="tel:112"
+               class="call-112">
+
+                📞 Call 112
+
+            </a>
+
+
+            <button
+                onclick="openSOSMap()"
+                class="sos-map">
+
+                🗺️ Open Location
+
+            </button>
+
+
+        </div>
+
+
+        <div class="sos-contacts">
+
+
+            <h3>
+                Trusted Contacts
+            </h3>
+
+
+            <div id="sosContactsList">
+
+                <p>
+                    Loading contacts...
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            onclick="closeSOS()"
+            class="back-home">
+
+            ← Return to SheSafe
+
+        </button>
+
+
+    </div>
+
+</div>
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+    <a href="/" class="bottom-tab active">
+        <span>🏠</span>
+        <small>Home</small>
+    </a>
+
+    <a href="/location-page" class="bottom-tab">
+        <span>📍</span>
+        <small>Location</small>
+    </a>
+
+    <a href="/contacts-page" class="bottom-tab">
+        <span>👥</span>
+        <small>Contacts</small>
+    </a>
+
+    <a href="#safety" class="bottom-tab">
+        <span>🛡️</span>
+        <small>Safety</small>
+    </a>
+
+    <a href="#assistant" class="bottom-tab">
+        <span>🤖</span>
+        <small>Assistant</small>
+    </a>
+</nav>
+
+<script src="{{ url_for('static', filename='app.js') }}">
+</script>
+
+
+</body>
+
+</html>
