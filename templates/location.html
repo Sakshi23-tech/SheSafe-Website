@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SheSafe | Live Location</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">She<span>Safe</span></div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/location-page">Location</a>
+        <a href="/#contacts">Contacts</a>
+        <a href="/#assistant">Assistant</a>
+    </nav>
+</header>
+
+<section class="section location-section">
+
+    <div class="section-title">
+        <p>REAL-TIME SAFETY</p>
+
+        <h2>📍 Live Location</h2>
+
+        <p>
+            Get your current location and open it in Google Maps.
+        </p>
+    </div>
+
+    <div class="live-location-card">
+
+        <div class="location-status">
+
+            <div class="location-pulse">
+                📍
+            </div>
+
+            <div>
+                <h3 id="locationStatus">
+                    Location not started
+                </h3>
+
+                <p id="locationTime">
+                    Click "Start Location" to begin.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="coordinates-box">
+
+            <div>
+                <span>LATITUDE</span>
+
+                <strong id="latitude">
+                    --
+                </strong>
+            </div>
+
+            <div>
+                <span>LONGITUDE</span>
+
+                <strong id="longitude">
+                    --
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="location-actions">
+
+            <button
+                class="start-location"
+                onclick="startLiveLocation()">
+
+                📍 Start Location
+
+            </button>
+
+
+            <button
+                class="stop-location"
+                onclick="stopLiveLocation()">
+
+                🛑 Stop
+
+            </button>
+
+        </div>
+
+
+        <a
+            id="mapLink"
+            href="#"
+            target="_blank"
+            class="map-button">
+
+            🗺️ Open in Google Maps
+
+        </a>
+
+    </div>
+
+
+    <div class="location-note">
+
+        🔐 <strong>Privacy:</strong>
+
+        Location is accessed only after browser permission
+        and tracking stops when you press Stop.
+
+    </div>
+
+</section>
+
+
+<section class="section safe-places-section">
+
+    <div class="section-title">
+
+        <p>NEARBY SUPPORT</p>
+
+        <h2>🛡️ Nearby Safe Places</h2>
+
+        <p>
+            Find police stations and hospitals near your location.
+        </p>
+
+    </div>
+
+
+    <div class="safe-places-card">
+
+        <div class="safe-place-item">
+
+            <div class="safe-place-icon">
+                👮
+            </div>
+
+            <div>
+
+                <h3>Police Stations</h3>
+
+                <p>
+                    Find nearby police stations.
+                </p>
+
+            </div>
+
+            <button
+                onclick="findNearby('police station')"
+                class="safe-place-button">
+
+                Find
+
+            </button>
+
+        </div>
+
+
+        <div class="safe-place-item">
+
+            <div class="safe-place-icon">
+                🏥
+            </div>
+
+            <div>
+
+                <h3>Hospitals</h3>
+
+                <p>
+                    Find nearby hospitals.
+                </p>
+
+            </div>
+
+            <button
+                onclick="findNearby('hospital')"
+                class="safe-place-button">
+
+                Find
+
+            </button>
+
+        </div>
+
+
+        <p
+            id="safePlaceStatus"
+            class="safe-place-status">
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>SheSafe</h3>
+
+    <p>
+        A student prototype focused on women's safety.
+    </p>
+
+    <p class="copyright">
+        © 2026 SheSafe
+    </p>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
