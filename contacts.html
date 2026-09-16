@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheSafe | Trusted Contacts</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        She<span>Safe</span>
+    </div>
+</header>
+
+<section class="section contacts-section">
+
+    <div class="section-title">
+        <p>YOUR SUPPORT NETWORK</p>
+        <h2>👥 Trusted Contacts</h2>
+        <p>Add people you trust for quick access during emergencies.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-form">
+            <h3>➕ Add Emergency Contact</h3>
+
+            <input type="text"
+                   id="contactName"
+                   placeholder="Contact Name">
+
+            <input type="tel"
+                   id="contactPhone"
+                   placeholder="Phone Number">
+
+            <button onclick="saveContact()">
+                Save Contact
+            </button>
+
+            <p id="contactMessage"></p>
+        </div>
+
+        <div class="contact-list">
+            <h3>📋 Saved Contacts</h3>
+
+            <div id="contactsList">
+                <p>No contacts added yet.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<nav class="bottom-nav">
+
+    <a href="/" class="bottom-tab">
+        <span>🏠</span>
+        <small>Home</small>
+    </a>
+
+    <a href="/location-page" class="bottom-tab">
+        <span>📍</span>
+        <small>Location</small>
+    </a>
+
+    <a href="/contacts-page" class="bottom-tab active">
+        <span>👥</span>
+        <small>Contacts</small>
+    </a>
+
+    <a href="/#safety" class="bottom-tab">
+        <span>🛡️</span>
+        <small>Safety</small>
+    </a>
+
+    <a href="/#assistant" class="bottom-tab">
+        <span>🤖</span>
+        <small>Assistant</small>
+    </a>
+
+</nav>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
